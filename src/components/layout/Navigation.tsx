@@ -54,7 +54,6 @@ export default function Navigation() {
           href="/"
           className="flex items-center gap-2 font-mono text-sm font-semibold tracking-tight text-fg-primary transition-colors hover:text-accent"
         >
-          <img src="/logo.png" alt="" className="h-7 w-7" />
           <span className="flex flex-col items-start leading-tight">
             <span className="text-fg-primary"><span className="text-accent">@</span>rootward3n</span>
             <span className="font-mono text-[10px] text-fg-muted">({siteConfig.realName})</span>
@@ -110,7 +109,6 @@ export default function Navigation() {
             className="overflow-hidden border-b border-border-subtle bg-bg-overlay/95 backdrop-blur-xl md:hidden"
           >
             <div className="px-6 py-4 flex items-center gap-2 border-b border-border-subtle">
-            <img src="/logo.png" alt="" className="h-7 w-7" />
             <span className="flex flex-col items-start leading-tight">
               <span className="text-fg-primary"><span className="text-accent">@</span>rootward3n</span>
               <span className="font-mono text-[10px] text-fg-muted">({siteConfig.realName})</span>
@@ -119,13 +117,28 @@ export default function Navigation() {
           <ul className="space-y-1 px-6 py-4">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="block rounded-md px-3 py-3 font-mono text-base text-fg-secondary transition-colors hover:bg-bg-elevated hover:text-fg-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-                  >
-                    {link.label}
-                  </a>
+                      <a
+                        href={link.href}
+                        onClick={(e) => {
+                          e.preventDefault();
+
+                          const target = document.querySelector(link.href);
+
+                          setMobileOpen(false);
+
+                          if (target) {
+                            setTimeout(() => {
+                              target.scrollIntoView({
+                                behavior: "smooth",
+                                block: "start",
+                              });
+                            }, 100);
+                          }
+                        }}
+                        className="block rounded-md px-3 py-3 font-mono text-base text-fg-secondary transition-colors hover:bg-bg-elevated hover:text-fg-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                      >
+                        {link.label}
+                      </a>
                 </li>
               ))}
               <li className="pt-2">

@@ -1,12 +1,12 @@
 export const siteConfig = {
   name: "rootward3n",
-  handle: "@rootward3n",
+  handle: "rootward3n",
   realName: "Shravan Kubade",
   role: "IT Student",
   tagline: "Learning by building at the edge of AI, security, and software.",
   description:
     "Portfolio of rootward3n — an IT student exploring artificial intelligence, cybersecurity, and software development through hands-on projects and relentless experimentation.",
-  url: "https://rootward3n.github.io/portfolio/",
+  url: "https://rootward3n.github.io/",
   email: "digicartelecom@gmail.com",
   github: "https://github.com/rootward3n",
   instagram: "https://instagram.com/rootward3n",
