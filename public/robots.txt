@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rootward3n.github.io/portfolio/sitemap.xml
