@@ -108,12 +108,6 @@ export default function Navigation() {
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
             className="overflow-hidden border-b border-border-subtle bg-bg-overlay/95 backdrop-blur-xl md:hidden"
           >
-            <div className="px-6 py-4 flex items-center gap-2 border-b border-border-subtle">
-            <span className="flex flex-col items-start leading-tight">
-              <span className="text-fg-primary"><span className="text-accent">@</span>rootward3n</span>
-              <span className="font-mono text-[10px] text-fg-muted">({siteConfig.realName})</span>
-            </span>
-          </div>
           <ul className="space-y-1 px-6 py-4">
               {navLinks.map((link) => (
                 <li key={link.href}>
